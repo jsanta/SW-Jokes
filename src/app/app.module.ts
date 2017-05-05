@@ -6,11 +6,15 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { SwJokeProvider } from '../providers/sw-joke/sw-joke';
+import { ShyriiwookServiceProvider } from '../providers/shyriiwook-service/shyriiwook-service';
+import { LodashSampleComponent } from '../components/lodash-sample/lodash-sample';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    LodashSampleComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +28,9 @@ import { HomePage } from '../pages/home/home';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    SwJokeProvider,
+    ShyriiwookServiceProvider
   ]
 })
 export class AppModule {}
