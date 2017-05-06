@@ -1,0 +1,31 @@
+<!--
+  Generated template for the JokePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<custom-header appName="SW jokes" pageTitle="Random joke"></custom-header>
+
+
+<ion-content padding-top>
+
+  <h2 [ngClass]="{'jedi': !!isJedi, 'sith': !!isSith, 'sw': !!!isJedi && !!!isSith}"
+      *ngIf="!!!joke && joke.title !== ''" [innerHTML]="joke.title"></h2>
+  <p [ngClass]="{'jedi': !!isJedi, 'sith': !!isSith, 'sw': !!!isJedi && !!!isSith}"
+      [innerHTML]="'<span class=quote>&ldquo;</span> ' + joke.joke"></p>
+  
+  <button ion-button large color="sw" (click)="getNewJoke()"><img src="assets/img/at-at.svg"> Another joke please...</button>
+
+  <hr>
+  <ion-list *ngIf="!!joke.references && joke.references.length > 0">
+    <ion-list-header>
+      More about:
+    </ion-list-header>
+    <button ion-item 
+            *ngFor="let ref of joke.references; let isFirst = first; let isLast = last;"
+            (click)="loadMoreInfo(ref)">
+      <span *ngIf="!isFirst && isLast">and </span> <span *ngIf="!isFirst"> more </span> {{ref.category}} in this joke
+    </button>
+  </ion-list>
+
+</ion-content>

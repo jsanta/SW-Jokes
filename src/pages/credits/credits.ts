@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { InAppBrowser } from "@ionic-native/in-app-browser";
 
 /**
  * Generated class for the CreditsPage page.
@@ -14,11 +15,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class CreditsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private browser: InAppBrowser, public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CreditsPage');
+  }
+
+  openBrowser(url: string) {
+    let options:any = { 
+      hardwareback: 'yes',
+      location: 'yes'
+    };
+    this.browser.create(url, options);
   }
 
 }

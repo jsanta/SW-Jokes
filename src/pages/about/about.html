@@ -1,0 +1,31 @@
+<!--
+  Generated template for the AboutPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<custom-header appName="SW jokes" pageTitle="About"></custom-header>
+
+<ion-content padding>
+  <img src="assets/img/jsanta.jpg">
+  <p text-center color="light">Proudly built in Chile by
+    <br>José Ignacio Santa Cruz
+  </p>
+  <hr>
+  <div text-center>
+    <button ion-button clear icon-only color="light" (click)="openBrowser('https://medium.com/@jsantacl')">
+      <ion-icon name="logo-rss"></ion-icon>
+    </button>
+    <button ion-button clear icon-only color="light" (click)="openBrowser('https://twitter.com/JSantaCL')">
+      <ion-icon name="logo-twitter"></ion-icon>
+    </button>
+    <button ion-button clear icon-only color="light" (click)="openBrowser('https://github.com/jsanta/SW-Jokes')">
+      <ion-icon name="logo-github"></ion-icon>
+    </button>
+    <button ion-button clear icon-only color="light" (click)="openBrowser('https://www.linkedin.com/in/jsanta/')">
+      <ion-icon name="logo-linkedin"></ion-icon>
+    </button>
+  </div>
+  <p text-right><small><span class="copyleft">&copy;</span> @JSantaCL 2017</small></p>
+
+</ion-content>

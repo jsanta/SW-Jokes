@@ -1,3 +1,11 @@
 Death Star by Jonas Nullens from the Noun Project
 Death Star by Lucid Formation from the Noun Project
 Darth Vader by chiara galli from the Noun Project
+
+https://codepen.io/saransh/pen/BKJun
+
+Yellow: #ffd54e
+Cyan: rgb(75, 213, 238)
+
+http://www.iconninja.com/star-wars-color-icon-sets-19874
+Chewbacca Vader & Kenobi icons

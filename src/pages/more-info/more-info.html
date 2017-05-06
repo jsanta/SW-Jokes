@@ -1,0 +1,41 @@
+<!--
+  Generated template for the MoreInfoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<custom-header appName="SW jokes" pageTitle="More info"></custom-header>
+
+
+<ion-content>
+
+  <ion-list>
+    <ion-list-header>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-2>
+            <button ion-button icon-only clear large color="light"
+                    (click)="goBack()">
+              <ion-icon name="arrow-back"></ion-icon>
+            </button>
+          </ion-col>
+          <ion-col col-auto>
+            <h2>Annotations for last joke<br><small>(on {{category}})</small></h2>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+
+    </ion-list-header>
+    <ng-container *ngFor="let res of response; let isLastR = last; ">
+      <ng-container *ngFor="let info of res.data; let isLast = last;">
+      <ion-item no-lines>
+        <ion-label stacked text-capitalize>{{info.label}}</ion-label>
+        <ion-input [value]="info.value" readonly disabled></ion-input>        
+      </ion-item>
+      <hr *ngIf="isLast && !isLastR">
+      </ng-container>
+    </ng-container>
+  </ion-list>
+
+</ion-content>

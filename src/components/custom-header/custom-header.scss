@@ -1,0 +1,36 @@
+custom-header {
+	ion-navbar.toolbar-ios.statusbar-padding {
+		.title.title-ios {
+			padding-top: 20px;
+		}
+		padding-top: 24px;
+	}
+
+	ion-toolbar.toolbar-ios, ion-toolbar.toolbar-md {
+		min-height: 38px;
+		margin-top: 0;
+		padding-top: 0;
+	}
+
+	ion-list.list, ion-item.item {
+		background-color: #222;
+	}
+	ion-list {
+		padding-bottom: 0;
+	}
+	ion-list.list-ios {
+		padding-top: 20px;
+		margin: 0;
+	}
+	ion-list.list-md {
+		margin: 0;
+	}
+
+	ion-toggle.toggle-ios, ion-toggle.toggle-md {
+		padding-left: 0!important;
+	}
+
+	ion-item.item h2 {
+		font-weight: bold;
+	}
+}

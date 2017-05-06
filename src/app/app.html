@@ -1,1 +1,31 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu [content]="content">
+    <ion-header>
+		<ion-toolbar color="dark">
+			<ion-title color="jedi">Menu</ion-title>
+		</ion-toolbar>
+	</ion-header>
+
+
+  <ion-content>
+
+    <ion-list [ngClass]="{'jedi': !!isJedi, 'sith': !!isSith, 'sw': !!!isJedi && !!!isSith}">
+        <ion-list-header (click)="changeAffiliation()">
+        <ion-avatar item-left>
+      <img src="assets/img/boba.svg">
+    </ion-avatar>
+    <h2 [ngClass]="{'jedi': !!isJedi, 'sith': !!isSith, 'sw': !!!isJedi && !!!isSith}" text-center>No afiliation</h2>
+    <!--<p text-center><small>(click to change)</small></p>-->
+  </ion-list-header>
+  
+        <ion-item menuClose (click)="openPage('SplashPage')">Enjoy the Splash (again)</ion-item>
+        <ion-item menuClose (click)="openPage('JokePage')">Random joke</ion-item>
+      <ion-item menuClose (click)="openPage('CreditsPage')">Credits</ion-item>
+      <ion-item menuClose (click)="openPage('AboutPage')">About</ion-item>
+    </ion-list>
+  </ion-content>
+  <ion-footer>
+      <button ion-button clear icon-right color="light" block (click)="exitApp()">Close App <ion-icon name="close"></ion-icon></button>
+  </ion-footer>
+</ion-menu>
+
+<ion-nav #content [root]="rootPage"></ion-nav>

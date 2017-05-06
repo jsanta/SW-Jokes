@@ -14,3 +14,55 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+custom-header ~ ion-content.content-md {
+	.fixed-content, .scroll-content {
+		margin-top: 112px;
+	}
+}
+custom-header ~ ion-content.content-ios {
+	.fixed-content, .scroll-content {
+		margin-top: 104px;
+	}
+}
+
+.sith {
+    color: red!important;
+}
+.jedi {
+    color: rgb(75, 213, 238)!important;
+}
+.sw {
+    color: #ffd54e!important;
+}
+
+ion-menu {
+    ion-content.content-ios, ion-content.content-md  {
+        background-color: #333;
+    }
+
+    ion-list ion-item.item-ios, ion-list ion-item.item-md {
+        background-color: rgba(85, 85, 85, 0.1);
+        color: inherit;
+    }
+    ion-list ion-label h2 {
+        color: inherit;
+    }
+
+    ion-avatar img {
+        margin-left: 1em;
+        margin-right: 0;
+        height: 50px!important;
+        width: 50px!important;
+    }
+}
+
+ion-nav {
+     .content-ios, .content-md  {
+    background: #304352;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to top, #d7d2cc, #1b2735);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to top, #d7d2cc, #1b2735); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+}
+

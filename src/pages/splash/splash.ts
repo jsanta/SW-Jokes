@@ -14,11 +14,32 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SplashPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+  public showBtn: boolean = false;
+
+
+  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+
+  showHideBtn() {
+    this.showBtn = false;
+    setTimeout(() => {
+      this.showBtn = true;
+    }, 12000);
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SplashPage');
+    //this.showHideBtn();
+  }
+
+  openPage(page) {
+    this.navCtrl.push(page);
+  }
+
+  ionViewWillEnter(): void {
+    console.log('ionViewWillEnter SplashPage');
+    this.showHideBtn();
   }
 
 }
+

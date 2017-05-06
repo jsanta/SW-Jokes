@@ -1,0 +1,58 @@
+page-about {
+    .button-group {
+
+  .col {
+    &:first-child:not(:last-child) {
+      padding: 0;
+      .button {
+        border-radius: 0;
+      }
+    }
+    &:not(:first-child):not(:last-child) {
+      padding: 0;
+      .button {
+        border-radius: 0;
+      }
+    }
+    &:last-child:not(:first-child) {
+      padding: 0;
+      .button {
+        border-radius: 0;
+      }
+    }
+  }
+  .row {
+	  margin: 0;
+	  padding: 0;
+  }
+  .button {
+	  box-shadow: none;
+	  margin: 0;
+  }
+}
+.button-group.grid{
+	margin: 0;
+	padding: 0;
+}
+
+ion-content {
+  img {
+    background-color: #fcfcfc;
+    padding: 20px;
+  }
+  p {
+    color: #fff;
+  }
+
+  .copyleft {
+    display: inline-block;
+    
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: FlipH;
+}
+}
+}
