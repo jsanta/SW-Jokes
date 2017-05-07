@@ -1,32 +1,33 @@
-This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
+## SW-Jokes: Annotated listing of Star Wars jokes
+This app takes a random joke from a hardcoded list, and based on the characters, species, planets, or any other fact that has a matching endpoint on the SW API, it will provide links to view the SW Api results on a much friendlier way.
 
-## How to use this template
+No sound or SW themed music due to copyrights.
 
-*This template does not work on its own*. The shared files for each starter are found in the [ionic2-app-base repo](https://github.com/driftyco/ionic2-app-base).
+## Nice coding features
+Don' t know if really nice, but I like them...
 
-To use this template, either create a new ionic project using the ionic node.js utility, or copy the files from this repository into the [Starter App Base](https://github.com/driftyco/ionic2-app-base).
+* Cool Splash screen (kind of useless, though)
+* Double lined app header (required some tweaks)
+* Header with a Toogle (also required some tweaking)
+* Lazy loading for pages
+* SVG icons
+* Lodash
+* InAppBrowser for external links
 
-### With the Ionic CLI:
+## TODO
+To resolve sometime, in the future...
 
-Take the name after `ionic2-starter-`, and that is the name of the template to be used when using the `ionic start` command below:
+* Un-hardcode the joke list
+* Unit & E2E tests
+* Add an "Affiliation" option to choose from Jedi/Sith/or none
+* Implement the real wookie mode, to apply joke translation to Shyriiwook
+* Add app languages
+* Use PouchDB for local cache.
 
-```bash
-$ sudo npm install -g ionic cordova
-$ ionic start myBlank blank
-```
+Had most of the TODO items in mind, but I really need to sleep.
 
-Then, to run it, cd into `myBlank` and run:
+Please report any issues. This is my first attempt for a full Ionic2 app, so bugs & improvements to be expected.
 
-```bash
-$ ionic platform add ios
-$ ionic run ios
-```
+*Twitter*: @JSantaCL
+*Medium*: https://medium.com/@jsantacl
 
-Substitute ios for android if not on a Mac.
-
-https://github.com/BrOrlandi/StarWarsIntroCreator
-http://blog.ionic.io/become-an-ionic-jedi-hackster/
-https://github.com/dmke/wookie-translator
-http://jalequin.atwebpages.com/Pages/Other/Translators/Shyriiwook.php
-
-git@bitbucket.org:jsantacl/sw-jokes.git
