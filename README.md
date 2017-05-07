@@ -1,6 +1,8 @@
 ## SW-Jokes: Annotated listing of Star Wars jokes
 This app takes a random joke from a hardcoded list, and based on the characters, species, planets, or any other fact that has a matching endpoint on the SW API, it will provide links to view the SW Api results on a much friendlier way.
 
+Ionic View code: af9e9892
+
 No sound or SW themed music due to copyrights.
 
 ## Nice coding features
@@ -28,6 +30,8 @@ Had most of the TODO items in mind, but I really need to sleep.
 
 Please report any issues. This is my first attempt for a full Ionic2 app, so bugs & improvements to be expected.
 
-*Twitter*: @JSantaCL
+*Twitter*: @JSantaCL |
 *Medium*: https://medium.com/@jsantacl
+
+
 
