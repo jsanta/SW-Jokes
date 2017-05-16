@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { IonicModule } from 'ionic-angular';
-import { SpyDirective } from "../../directives/spy/spy";
 //import { CustomHeader } from './custom-header';
 
 @NgModule({
@@ -8,8 +7,7 @@ import { SpyDirective } from "../../directives/spy/spy";
     //CustomHeader,    
   ],
   imports: [
-	  IonicModule,
-    SpyDirective
+	  IonicModule    
   ],
   exports: [
     //CustomHeader
