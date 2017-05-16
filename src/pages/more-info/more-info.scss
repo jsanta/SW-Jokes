@@ -14,7 +14,7 @@ page-more-info {
             }
             ion-col h2 {
                 padding-top: 0.9em;
-                color: #fff;
+                color: #cecece;
             }
             padding: 0;
         }
@@ -24,6 +24,15 @@ page-more-info {
 
     ion-input {
         padding-left: 1.5em;
+    }
+
+    ion-list-header.list-header.item-md {
+        background-color: transparent;
+        margin-bottom: 0;
+    }
+
+    ion-list.list-md {
+        margin-top: 0;
     }
 
 }

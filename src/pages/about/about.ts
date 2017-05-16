@@ -1,6 +1,7 @@
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Events } from 'ionic-angular';
+import { BasePage } from "../base/base";
 
 /**
  * Generated class for the AboutPage page.
@@ -13,9 +14,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   selector: 'page-about',
   templateUrl: 'about.html',
 })
-export class AboutPage {
+export class AboutPage extends BasePage {
 
-  constructor(private browser: InAppBrowser, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private browser: InAppBrowser, public navCtrl: NavController, public navParams: NavParams,
+    eventsCtrl: Events) {
+      // Ref.: http://stackoverflow.com/questions/39836010/ionic-2-page-change-event
+      // Due to an issue in angular, by now you must send the dependency to the super class
+      // https://github.com/angular/angular/issues/5155
+      super(eventsCtrl);
   }
 
   ionViewDidLoad() {
@@ -27,7 +33,7 @@ export class AboutPage {
       hardwareback: 'yes',
       location: 'yes'
     };
-    this.browser.create(url, options);
+    this.browser.create(url, '_self', options);
   }
 
 }

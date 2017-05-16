@@ -20,15 +20,12 @@ export class SwJokeProvider {
   }>
 
   getJoke() {
-    let rndJoke = _.sample(this.jokes);
-    console.log(rndJoke);
+    let rndJoke = _.sample(this.jokes);    
     return rndJoke;
 
   }
 
   constructor(public http: Http) {
-    console.log('Hello SwJokeProvider Provider');
-
 
     /*
       {

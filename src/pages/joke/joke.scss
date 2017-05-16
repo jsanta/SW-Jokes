@@ -9,6 +9,15 @@ page-joke {
         width: auto;
         margin-right: 1em;
     }
+    #jokeBtn {
+        width:90%;
+        .button-inner {            
+            span {
+                display: inline-block;
+                white-space: normal;
+            }
+        }
+    } 
     p {
         font-style: italic;
         font-size: 1.5em;
@@ -17,5 +26,11 @@ page-joke {
     }
     p span.quote {
         font-size: 2em;
+    }
+
+    ion-list-header.item-md {
+        background-color: transparent;
+        border-top: none;
+        color: #444;
     }
 }

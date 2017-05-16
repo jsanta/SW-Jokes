@@ -2,19 +2,18 @@ import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { JokePage } from './joke';
 import { ComponentsModule } from "../../components/components.modules";
-import { SwJokeProvider } from "../../providers/sw-joke/sw-joke";
+import { ShyriiwookPipe } from "../../pipes/shyriiwook/shyriiwook";
 
 @NgModule({
   declarations: [
     JokePage,
+    ShyriiwookPipe
   ],
   imports: [
     IonicPageModule.forChild(JokePage),
     ComponentsModule,
   ],
-  providers: [
-    SwJokeProvider
-  ],
+  providers: [],
   exports: [
     JokePage
   ]

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Events } from 'ionic-angular';
 import { InAppBrowser } from "@ionic-native/in-app-browser";
+import { BasePage } from "../base/base";
 
 /**
  * Generated class for the CreditsPage page.
@@ -13,9 +14,11 @@ import { InAppBrowser } from "@ionic-native/in-app-browser";
   selector: 'page-credits',
   templateUrl: 'credits.html',
 })
-export class CreditsPage {
+export class CreditsPage extends BasePage {
 
-  constructor(private browser: InAppBrowser, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private browser: InAppBrowser, public navCtrl: NavController, public navParams: NavParams,
+    eventsCtrl: Events) {
+      super(eventsCtrl);
   }
 
   ionViewDidLoad() {
@@ -27,7 +30,7 @@ export class CreditsPage {
       hardwareback: 'yes',
       location: 'yes'
     };
-    this.browser.create(url, options);
+    this.browser.create(url, '_self', options);
   }
 
 }

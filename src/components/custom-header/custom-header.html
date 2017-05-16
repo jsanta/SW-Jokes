@@ -1,29 +1,34 @@
 <!-- Generated template for the CustomHeader component -->
-<ion-header color="dark" [ngClass]="{'jedi': !!isJedi, 'sith': !!isSith, 'sw': !!!isJedi && !!!isSith}">
-    
+<ion-header mySpy color="dark" [ngClass]="{
+        'jedi': !!isJedi, 
+        'sith': !!!isJedi, 
+        'sw': isJedi === undefined }">
+
   <ion-list>
 
     <ion-item no-lines>
-      <h2 item-left [ngClass]="{'jedi': !!isJedi, 'sith': !!isSith, 'sw': !!!isJedi && !!!isSith}">{{appName}}</h2>
+      <h2 item-left [ngClass]="{
+        'jedi': !!isJedi, 
+        'sith': !!!isJedi, 
+        'sw': isJedi === undefined }">{{appName}}</h2>
       <ion-avatar item-right>
-
-      <img src="assets/img/chewbacca.svg">
-    </ion-avatar>
-    
-      
-      <ion-toggle [(ngModel)]="chewieTg" [checked]="chewie" (ionChange)="chewieMode($event, chewieTg)" color="chewie"></ion-toggle>
+        <img src="assets/img/chewbacca.svg">
+      </ion-avatar>
+      <ion-toggle [(ngModel)]="chewie" (ionChange)="chewieMode($event)" color="chewie"></ion-toggle>
     </ion-item>
 
   </ion-list>
 
-  	<ion-toolbar color="dark">
+  <ion-toolbar color="dark">
 
-        <button ion-button icon-only menuToggle>
-          <ion-icon name="menu"></ion-icon>
-        </button>
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title [ngClass]="{
+        'jedi': !!isJedi, 
+        'sith': !!!isJedi, 
+        'sw': isJedi === undefined }">{{pageTitle}}</ion-title>
 
-      <ion-title [ngClass]="{'jedi': !!isJedi, 'sith': !!isSith, 'sw': !!!isJedi && !!!isSith}">{{pageTitle}}</ion-title>
-
-    </ion-toolbar>
+  </ion-toolbar>
 
 </ion-header>

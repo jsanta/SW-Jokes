@@ -8,10 +8,14 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { SwJokeProvider } from '../providers/sw-joke/sw-joke';
 import { SwApiServiceProvider } from '../providers/sw-api-service/sw-api-service';
+import { GlobalScopeService } from '../providers/global-scope-service/global-scope-service';
+import { SpyDirective } from '../directives/spy/spy';
+import { ShyriiwookPipe } from '../pipes/shyriiwook/shyriiwook';
 
 @NgModule({
   declarations: [
     MyApp,
+    SpyDirective,    
   ],
   imports: [
     BrowserModule,
@@ -27,7 +31,9 @@ import { SwApiServiceProvider } from '../providers/sw-api-service/sw-api-service
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     SwJokeProvider,
-    SwApiServiceProvider
+    SwApiServiceProvider,
+    GlobalScopeService
+    
   ]
 })
 export class AppModule {}

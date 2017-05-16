@@ -2,14 +2,24 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
-  <title>Ionic App</title>
+  <title>SW Jokes</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  
+  <!--Ref.: https://forum.ionicframework.com/t/solution-for-livereload-problems-with-new-csp-rules/25449/10-->
+  <meta http-equiv="Content-Security-Policy" content="img-src * 'self' data:; default-src * 'self' gap: wss: ws: ; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'  localhost:* 127.0.0.1:*;">
+  
   <meta name="format-detection" content="telephone=no">
   <meta name="msapplication-tap-highlight" content="no">
 
   <link rel="icon" type="image/x-icon" href="assets/icon/favicon.ico">
   <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#4e8ef7">
+
+  <meta name="theme-color" content="#222222">
+  <!-- Windows Phone -->
+  <meta name="msapplication-navbutton-color" content="#222222">
+  <!-- iOS Safari -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#222222">
  
   <!-- cordova.js required for cordova apps -->
   <script src="cordova.js"></script>
@@ -26,7 +36,7 @@
   <link href="build/main.css" rel="stylesheet">
 
 </head>
-<body>
+<body style="background-color: #333;">
 
   <!-- Ionic's root component and where the app will load -->
   <ion-app></ion-app>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Events } from 'ionic-angular';
+import { BasePage } from "../base/base";
 
 /**
  * Generated class for the SplashPage page.
@@ -12,13 +13,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   selector: 'page-splash',
   templateUrl: 'splash.html',
 })
-export class SplashPage {
+export class SplashPage extends BasePage {
 
 
   public showBtn: boolean = false;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams, eventsCtrl: Events) {
+    super(eventsCtrl);
+  }
+
+
 
   showHideBtn() {
     this.showBtn = false;

@@ -9,12 +9,21 @@
 
 <ion-content padding-top>
 
-  <h2 [ngClass]="{'jedi': !!isJedi, 'sith': !!isSith, 'sw': !!!isJedi && !!!isSith}"
+  <h2 [ngClass]="{
+      'jedi': !!isJedi, 
+      'sith': !!!isJedi, 
+      'sw': isJedi === undefined }"
       *ngIf="!!!joke && joke.title !== ''" [innerHTML]="joke.title"></h2>
-  <p [ngClass]="{'jedi': !!isJedi, 'sith': !!isSith, 'sw': !!!isJedi && !!!isSith}"
-      [innerHTML]="'<span class=quote>&ldquo;</span> ' + joke.joke"></p>
+  <p [ngClass]="{
+      'jedi': !!isJedi, 
+      'sith': !!!isJedi, 
+      'sw': isJedi === undefined }"
+      [innerHTML]="'<span class=quote>&ldquo;</span> ' + (joke.joke | shyriiwook: chewie)"></p>
   
-  <button ion-button large color="sw" (click)="getNewJoke()"><img src="assets/img/at-at.svg"> Another joke please...</button>
+  <button id="jokeBtn" ion-button large color="sw" (click)="getNewJoke()">
+    <img src="assets/img/at-at.svg"> 
+    <span>{{ ((!chewie) ? 'Another joke please...' : 'Another joke...') | shyriiwook: chewie }}</span>
+  </button>
 
   <hr>
   <ion-list *ngIf="!!joke.references && joke.references.length > 0">

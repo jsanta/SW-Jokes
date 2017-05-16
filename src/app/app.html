@@ -8,19 +8,25 @@
 
   <ion-content>
 
-    <ion-list [ngClass]="{'jedi': !!isJedi, 'sith': !!isSith, 'sw': !!!isJedi && !!!isSith}">
+    <ion-list [ngClass]="{
+      'jedi': !!isJedi, 
+      'sith': !!!isJedi, 
+      'sw': isJedi === undefined }">
         <ion-list-header (click)="changeAffiliation()">
-        <ion-avatar item-left>
-      <img src="assets/img/boba.svg">
-    </ion-avatar>
-    <h2 [ngClass]="{'jedi': !!isJedi, 'sith': !!isSith, 'sw': !!!isJedi && !!!isSith}" text-center>No afiliation</h2>
-    <!--<p text-center><small>(click to change)</small></p>-->
-  </ion-list-header>
+          <ion-avatar item-left>
+            <img [src]="'assets/img/'+ affiliationImg + '.svg'">
+          </ion-avatar>
+          <h2 [ngClass]="{
+              'jedi': !!isJedi, 
+              'sith': !!!isJedi, 
+              'sw': isJedi === undefined }" text-center>{{ (isJedi === undefined) ? 'No affiliation':(isJedi ? 'Jedi' : 'Sith')}}</h2>
+          <p text-center><small>(click to change)</small></p>
+        </ion-list-header>
   
-        <ion-item menuClose (click)="openPage('SplashPage')">Enjoy the Splash (again)</ion-item>
-        <ion-item menuClose (click)="openPage('JokePage')">Random joke</ion-item>
-      <ion-item menuClose (click)="openPage('CreditsPage')">Credits</ion-item>
-      <ion-item menuClose (click)="openPage('AboutPage')">About</ion-item>
+        <button ion-item menuClose (click)="openPage('SplashPage')">Enjoy the Splash (again)</button>
+        <button ion-item menuClose (click)="openPage('JokePage')">Random joke</button>
+      <button ion-item menuClose (click)="openPage('CreditsPage')">Credits</button>
+      <button ion-item menuClose (click)="openPage('AboutPage')">About</button>
     </ion-list>
   </ion-content>
   <ion-footer>

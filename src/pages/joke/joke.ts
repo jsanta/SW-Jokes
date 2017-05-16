@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Events } from 'ionic-angular';
 import { SwJokeProvider } from "../../providers/sw-joke/sw-joke";
 
 import * as _ from 'lodash';
+import { GlobalScopeService } from "../../providers/global-scope-service/global-scope-service";
+import { Subscription } from "rxjs/Subscription";
+import { BasePage } from "../base/base";
 
 /**
  * Generated class for the JokePage page.
@@ -13,36 +16,67 @@ import * as _ from 'lodash';
 @IonicPage()
 @Component({
   selector: 'page-joke',
-  templateUrl: 'joke.html',
+  templateUrl: 'joke.html'
 })
-export class JokePage {
-  public joke: any = {};
+export class JokePage extends BasePage {
+  joke: any = {};
+  isJedi: boolean = false;
+  isJedi$: Subscription;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public jokeProvider: SwJokeProvider) {
+  chewie: boolean = false;
+  chewie$: Subscription;
+
+
+
+  variables: any;  
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public jokeProvider: SwJokeProvider, private rootScope: GlobalScopeService,
+    eventsCtrl: Events) {  
+
+      super(eventsCtrl);  
+
+    this.isJedi  = rootScope.getItem('isJedi');
+    this.isJedi$ = rootScope.watch('isJedi').subscribe(variable => { 
+      this.isJedi = (variable != undefined) ? variable.value : undefined;       
+    });  
+
+    this.chewie = this.rootScope.getItem('chewieMode');
+    if(this.rootScope.getItem('chewieMode') === undefined) {      
+      this.chewie = false;
+      this.rootScope.setItem('chewieMode', this.chewie);
+    }
+    this.chewie$ = this.rootScope.watch('chewieMode')         
+    .subscribe(chewie => {              
+      this.chewie = (chewie != undefined) ? chewie.value : false;                   
+    });   
+    
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad JokePage');
+  ionViewWillLeave() {
+    //if(!!this.isJedi$){
+      this.isJedi$.unsubscribe();
+      this.chewie$.unsubscribe();
+    //}    
   }
 
-  getNewJoke() {
-    console.log('getNewJoke');
+  ionViewDidLoad() {}
+
+  getNewJoke() {    
     this.joke = this.jokeProvider.getJoke();
   }
 
-  ionViewWillEnter(): void {
-    console.log('ionViewWillEnter JokePage', this.navParams);
-    if(!!this.navParams.data && this.navParams.data.back){
-      console.log(this.joke);
-      if(!!!this.navParams.data.joke.joke) {
-        console.log('Loading new joke, from back button.');
+  ionViewWillEnter(): void {    
+    if(!!this.navParams.data && this.navParams.data.back){      
+      if(!!!this.navParams.data.joke.joke) {        
         this.getNewJoke();
       } else {
-        this.joke = this.navParams.data.joke;
-        console.log('Do nothing. Back from Joke annotations.');
+        this.joke = this.navParams.data.joke;        
       }
-    } else {
-      console.log('Loading new joke');
+    } else {      
+      this.getNewJoke();
+    }
+
+    if(!!!this.joke){      
       this.getNewJoke();
     }
     
@@ -50,7 +84,7 @@ export class JokePage {
 
   loadMoreInfo(refData: any) {
     _.assign(refData, { joke: this.joke });
-    this.navCtrl.push('MoreInfoPage', refData);
+    this.navCtrl.setRoot('MoreInfoPage', refData);
   }
 
 }
