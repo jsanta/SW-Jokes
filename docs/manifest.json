@@ -1,7 +1,7 @@
 {
   "name": "StarWars jokes",
   "short_name": "SW-jokes",
-  "start_url": "index.html",
+  "start_url": "app.html",
   "display": "standalone",
   "icons": [{
     "src": "assets/icon/icon.png",
